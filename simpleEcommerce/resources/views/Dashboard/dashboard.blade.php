@@ -1,6 +1,6 @@
 @extends('Main.main')
 @section('title')
-    Register
+    Dashboard
 @endsection
 
 @section('content')
@@ -10,6 +10,7 @@
       width: 100%;
       height: 400px; /* Adjust the height as needed */
       object-fit: cover;
+      margin-top: 20px;
     }
 
     .card-slider {
@@ -19,33 +20,40 @@
 
     .card {
       display: inline-block;
-      width: 300px; /* Adjust the width as needed */
+      width: 200px; /* Adjust the width as needed */
       margin-right: 10px; /* Adjust the margin as needed */
     }
 
+    
     /* Custom styles for the product card */
     .product-card {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     .product-card{
-        width: 200px;
+        width: 180px;
+        height: 320px;
     }
-    
+    .bgMe{
+        border-radius: 20px;
+    }
   </style>
 
 
   {{-- Carousel --}}
-    <div class="container">
+    <div class="container mt-3">
         <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Banner 1">
+                    <img class="bgMe" src="{{ url('images/me.jpg') }}" class="d-block w-100" alt="Banner 1">
+                    {{-- https://via.placeholder.com/1200x400 --}}
                 </div>
                 <div class="carousel-item">
-                    <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Banner 2">
+                    <img class="bgMe" src="{{ url('images/me.jpg') }}" class="d-block w-100" alt="Banner 2">
+                    {{-- https://via.placeholder.com/1200x400 --}}
                 </div>
                 <div class="carousel-item">
-                    <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Banner 3">
+                    <img class="bgMe" src="{{ url('images/me.jpg') }}" class="d-block w-100" alt="Banner 3">
+                    {{-- https://via.placeholder.com/1200x400 --}}
                 </div>
 
                 <!-- Add more carousel items here -->
@@ -63,13 +71,12 @@
     </div>
 
     {{-- Card Carousel --}}
-    <div class="container mt-3 p-5" >
+    <div class="container p-5" >
         <div class="card-slider">
-            
             @for ($i=1; $i<=10; $i++)
                 <div class="card">
-                    <a href="" class="text-decoration-none">
-                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Card Image">
+                    <a href="{{ url('/') }}" class="text-decoration-none">
+                        <img src="{{ url('images/test.png') }}" class="card-img-top" alt="Card Image">
                     </a>
                     <div class="card-body">
                         <h5 class="card-title">Card {{ $i }}</h5>
@@ -81,29 +88,28 @@
         </div>
     </div>
 
-    <div class="container-fluid p-5">
+    <div class="container">
         <div class="row">
             @for ($i = 0; $i <= 20; $i++)
-                <div class="col">
+                <div class="col-6 col-md-3 col-lg-2">
                     <div class="card product-card">
-                        <img src="https://via.placeholder.com/300" class="card-img-top img-fluid" alt="Product Image">
+                        <img src="{{ url('images/test.png') }}" class="card-img-top img-fluid" alt="Product Image">
                         <div class="card-body">
                         <h5 class="card-title">Nama Produk</h5>
                         <p class="card-text">Harga: Rp100.000</p>
-                        <p class="card-text">Asal Penjual: Toko ABC</p>
-                        <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                        <a href="#" class="btn btn-sm btn-primary">Beli Sekarang</a>
                         </div>
                     </div>
                 </div>
             @endfor
-
+            <!-- Add more product cards here -->
+        </div>
+        <div class="row mb-3">
             <div class="col text-center">
                 <a href="{{ url('/katalog') }}" class="btn btn-outline-secondary btn-sm">
                     Lihat semua Produk
                 </a>
             </div>
-
-            <!-- Add more product cards here -->
         </div>
     </div>
 @endsection

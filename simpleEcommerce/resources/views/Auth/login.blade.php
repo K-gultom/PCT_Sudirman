@@ -137,26 +137,31 @@
             opacity: 0;
         }
     }
+    .container{
+        position: relative;
+    }
 </style>
 
-    <div class="container mt-5 mb-5">
+    <div class="container mt-5 mb-5 bg-dark">
         <center>
-            <div class="card col-md-4 col-xl-3">
-                <form class="form" method="POST">
-                    @csrf
-                    <p class="title">Login </p>
-                    <label>
-                        <input required="" placeholder="" type="email" class="input">
-                        <span>Email</span>
-                    </label> 
-                        
-                    <label>
-                        <input required="" placeholder="" type="password" class="input">
-                        <span>Password</span>
-                    </label>
-                    <button class="submit"> <i class="bi bi-box-arrow-in-right"></i> Login</button>
-                    <p class="signin">Don't have an acount ? <a href="{{ url('/register') }}">Register Here</a> </p>
-                </form>
+            <div class="card col-md-4 col-xl-3 bg-danger">
+                <center>
+                    <form class="form" method="POST">
+                        @csrf
+                        <p class="title">Login </p>
+                        <label>
+                            <input required="" placeholder="" type="email" class="input">
+                            <span>Email</span>
+                        </label> 
+                            
+                        <label>
+                            <input required="" placeholder="" type="password" class="input">
+                            <span>Password</span>
+                        </label>
+                        <button class="submit"> <i class="bi bi-box-arrow-in-right"></i> Login</button>
+                        <p class="signin">Don't have an acount ? <a href="{{ url('/register') }}">Register Here</a> </p>
+                    </form>
+                </center>
             </div>
         </center>
     </div>

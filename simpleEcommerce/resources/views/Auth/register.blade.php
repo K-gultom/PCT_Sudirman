@@ -142,38 +142,40 @@
     <div class="container mt-5 mb-5">
         <center>
             <div class="card col-md-3">
-                <form class="form" method="POST">
-                    @csrf
-                    <p class="title">Register </p>
-                    <p class="message">Sign Up now and get full access to our app. </p>
-                    <div class="flex">
+                <center>
+                    <form class="form" method="POST">
+                        @csrf
+                        <p class="title">Register </p>
+                        <p class="message">Sign Up now and get full access to our app. </p>
+                        <div class="flex">
+                            <label>
+                                <input required="" placeholder="" type="text" class="input">
+                                <span>Firstname</span>
+                            </label>
+                    
+                            <label>
+                                <input required="" placeholder="" type="text" class="input">
+                                <span>Lastname</span>
+                            </label>
+                        </div>  
+                                
                         <label>
-                            <input required="" placeholder="" type="text" class="input">
-                            <span>Firstname</span>
-                        </label>
-                
-                        <label>
-                            <input required="" placeholder="" type="text" class="input">
-                            <span>Lastname</span>
-                        </label>
-                    </div>  
+                            <input required="" placeholder="" type="email" class="input">
+                            <span>Email</span>
+                        </label> 
                             
-                    <label>
-                        <input required="" placeholder="" type="email" class="input">
-                        <span>Email</span>
-                    </label> 
-                        
-                    <label>
-                        <input required="" placeholder="" type="password" class="input">
-                        <span>Password</span>
-                    </label>
-                    <label>
-                        <input required="" placeholder="" type="password" class="input">
-                        <span>Confirm password</span>
-                    </label>
-                    <button class="submit">Submit <i class="bi bi-check2"></i></button>
-                    <p class="signin">Already have an acount ? <a href="{{ url('/login') }}">Sign In</a> </p>
-                </form>
+                        <label>
+                            <input required="" placeholder="" type="password" class="input">
+                            <span>Password</span>
+                        </label>
+                        <label>
+                            <input required="" placeholder="" type="password" class="input">
+                            <span>Confirm password</span>
+                        </label>
+                        <button class="submit">Submit <i class="bi bi-check2"></i></button>
+                        <p class="signin">Already have an acount ? <a href="{{ url('/login') }}">Sign In</a> </p>
+                    </form>
+                </center>
             </div>
         </center>
     </div>

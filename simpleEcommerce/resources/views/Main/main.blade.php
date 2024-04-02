@@ -13,10 +13,6 @@
     </head>
     <body>
         <style>
-
-
-
-
             /* Style Footer */
             /* Custom styles for the footer */
             .footer {
@@ -31,24 +27,29 @@
             .footer a:hover {
               text-decoration: underline;
             }
-            
-          </style>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+            .text{
+                color: #ffff;
+            }
+        </style>
+
+
+        <nav class="fixed-top navbar navbar-expand-lg" style="background-color: #454343">
             <div class="container-fluid">
-                <a class="navbar-brand ms-3" href="{{ url('/') }}">Small E-Commerce</a>
+                <a class="text navbar-brand ms-3" href="{{ url('/') }}">Small E-Commerce</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
+                            <a class="text nav-link" aria-current="page" href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Katalog</a>
+                            <a class="text nav-link" href="{{ url('/katalog') }}">Katalog</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="text nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown
                             </a>
                             <ul class="dropdown-menu">
@@ -59,17 +60,17 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Profile</a>
+                            <a class="text nav-link mx-2" href="#">Profile</a>
                         </li>
                     </ul>
-                    <a href="{{ url('/login') }}" class="btn btn-outline-primary btn-sm me-2"><i class="bi bi-box-arrow-in-right"></i> Login</a>
-                    <a href="{{ url('/register') }}" class="btn btn-primary btn-sm me-5"><i class="bi bi-pencil-square"></i> Register</a>
+                    <a href="{{ url('/login') }}" class="text btn btn-outline-light btn-sm me-2"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                    <a href="{{ url('/register') }}" class="text btn btn-outline-light btn-sm me-3"><i class="bi bi-pencil-square"></i> Register</a>
                 </div>
             </div>
         </nav>
 
 
-        <div class="pt-1">
+        <div class="mt-5">
             @yield('content')
         </div>
 
