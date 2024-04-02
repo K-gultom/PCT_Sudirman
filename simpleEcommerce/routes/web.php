@@ -23,7 +23,3 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [dashboardController::class, 'index']);
 
-Route::get('/login', [authController::class, 'index']);
-Route::get('/register', [authController::class, 'register']);
-
-Route::get('/katalog', [katalogController::class, 'index']);
