@@ -15,7 +15,7 @@
         max-width: 350px;
         background-color: #fff;
         padding: 20px;
-        border-radius: 20px;
+        /* border-radius: 20px; */
         position: relative;
     }
 
@@ -137,39 +137,35 @@
             opacity: 0;
         }
     }
+
+    .abc{
+        margin-top: 100px;
+    }
+
 </style>
 
-    <div class="container mt-5 mb-5">
+    <div class="container abc mb-5">
         <center>
             <div class="card col-md-3">
                 <center>
-                    <form class="form" method="POST">
+                    <form action="" class="form" method="POST" style="background-color: #dfdfdf">
                         @csrf
                         <p class="title">Register </p>
                         <p class="message">Sign Up now and get full access to our app. </p>
-                        <div class="flex">
-                            <label>
-                                <input required="" placeholder="" type="text" class="input">
-                                <span>Firstname</span>
-                            </label>
-                    
-                            <label>
-                                <input required="" placeholder="" type="text" class="input">
-                                <span>Lastname</span>
-                            </label>
-                        </div>  
-                                
                         <label>
-                            <input required="" placeholder="" type="email" class="input">
+                            <input name="name" placeholder="" type="text" class="input">
+                            <span>Your Name</span>
+                        </label>
+                        <label>
+                            <input name="email" placeholder="" type="email" class="input">
                             <span>Email</span>
-                        </label> 
-                            
+                        </label>
                         <label>
-                            <input required="" placeholder="" type="password" class="input">
+                            <input name="password" placeholder="" type="password" class="input">
                             <span>Password</span>
                         </label>
                         <label>
-                            <input required="" placeholder="" type="password" class="input">
+                            <input name="password_confirmation" placeholder="" type="password" class="input">
                             <span>Confirm password</span>
                         </label>
                         <button class="submit">Submit <i class="bi bi-check2"></i></button>

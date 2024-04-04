@@ -15,7 +15,7 @@
         max-width: 350px;
         background-color: #fff;
         padding: 20px;
-        border-radius: 20px;
+        /* border-radius: 20px; */
         position: relative;
     }
 
@@ -137,29 +137,35 @@
             opacity: 0;
         }
     }
-    .container{
-        position: relative;
+
+    .abc{
+        margin-top: 100px;
     }
+
 </style>
 
-    <div class="container mt-5 mb-5 bg-dark">
+
+    <div class="container abc mb-5">
         <center>
-            <div class="card col-md-4 col-xl-3 bg-danger">
+            <div class="card mt-5 col-md-4 col-xl-3">
                 <center>
-                    <form class="form" method="POST">
+                    <form class="form" method="POST" style="background-color: #dfdfdf">
+
                         @csrf
                         <p class="title">Login </p>
                         <label>
-                            <input required="" placeholder="" type="email" class="input">
+                            <input name="email" placeholder="" type="email" class="input">
                             <span>Email</span>
                         </label> 
                             
                         <label>
-                            <input required="" placeholder="" type="password" class="input">
+                            <input name="password" placeholder="" type="password" class="input">
                             <span>Password</span>
                         </label>
+
                         <button class="submit"> <i class="bi bi-box-arrow-in-right"></i> Login</button>
                         <p class="signin">Don't have an acount ? <a href="{{ url('/register') }}">Register Here</a> </p>
+
                     </form>
                 </center>
             </div>
