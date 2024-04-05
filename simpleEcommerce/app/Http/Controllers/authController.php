@@ -105,7 +105,7 @@ class authController extends Controller
         $new -> password = Hash::make($r->password);
         $new -> save();
         
-        return redirect('/register');
+        return redirect('/register')->with('message', 'Register Success!!!');
     }
 
 }
