@@ -56,6 +56,13 @@ class authController extends Controller
         }
     }
 
+    public function logout(){
+        
+        Auth::logout();
+
+        return redirect('/');
+    }
+
     /**
      * Display the specified resource.
      *

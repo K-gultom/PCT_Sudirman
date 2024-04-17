@@ -16,7 +16,7 @@
             /* Style Footer */
             /* Custom styles for the footer */
             .footer {
-              background-color: #454343;
+              background-color: #9E9E9E;
               color: #fff;
               padding: 30px 0;
             }
@@ -34,7 +34,7 @@
         </style>
 
 
-        <nav class="fixed-top navbar navbar-expand-lg" style="background-color: #454343">
+        <nav class="fixed-top navbar navbar-expand-lg" style="background-color: #9E9E9E">
             <div class="container-fluid">
                 <a class="text navbar-brand ms-3" href="{{ url('/') }}">Small E-Commerce</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,23 +48,26 @@
                         <li class="nav-item">
                             <a class="text nav-link" href="{{ url('/katalog') }}">Katalog</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="text nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="text nav-link mx-2" href="#">Profile</a>
-                        </li>
+                        @if (Auth::user())
+                            <li class="nav-item dropdown">
+                                <a class="text nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                My Account
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Kategori</a></li>
+                                    <li><a class="dropdown-item" href="#">Produk</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('/logout') }}">Logout</a></li>
+                                </ul>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <a href="{{url('login')}}" class="text nav-link">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('register')}}" class="text nav-link">Register</a>
+                            </li>
+                        @endif
                     </ul>
-                    <a href="{{ url('/login') }}" class="text btn btn-outline-light btn-sm me-2"><i class="bi bi-box-arrow-in-right"></i> Login</a>
-                    <a href="{{ url('/register') }}" class="text btn btn-outline-light btn-sm me-3"><i class="bi bi-pencil-square"></i> Register</a>
                 </div>
             </div>
         </nav>

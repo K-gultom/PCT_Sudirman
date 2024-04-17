@@ -39,7 +39,10 @@ Route::middleware([NoLogin::class])->group(function(){
 
 Route::middleware(['auth'])->group(function(){
 
-    //Katalog
+    //logout
+    Route::get('/logout', [authController::class, 'logout']);
+
+    //katalog
     Route::get('/katalog', [katalogController::class, 'index']);
 
 });
