@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\authController;
+use App\Http\Controllers\categoryController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\katalogController;
 use App\Http\Middleware\NoLogin;
@@ -44,6 +45,14 @@ Route::middleware(['auth'])->group(function(){
 
     //katalog
     Route::get('/katalog', [katalogController::class, 'index']);
+
+
+    //Category
+    Route::get('/category', [categoryController::class, 'index']);
+    Route::get('/add/category', [categoryController::class, 'add']);
+    Route::get('/edit/category', [categoryController::class, 'edit']);
+    Route::get('/del/category', [categoryController::class, 'delete']);
+
 
 });
 

@@ -54,7 +54,7 @@
                                 My Account
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Kategori</a></li>
+                                    <li><a class="dropdown-item" href="{{ url('/category') }}">Category</a></li>
                                     <li><a class="dropdown-item" href="#">Produk</a></li>
                                     <li><a class="dropdown-item me-5" href="{{ url('/logout') }}">Logout</a></li>
                                 </ul>
