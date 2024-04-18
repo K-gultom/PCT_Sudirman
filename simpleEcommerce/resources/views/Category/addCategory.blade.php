@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-    <div class="container-fluid mt-2">
+    <div class="container-fluid pt-3 mb-3">
         <h4 class="mb-0">Add Category</h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -32,7 +32,7 @@
                                 </div>
                             @endif
 
-                            <form action="" method="post">
+                            <form action="{{ url('/add/category') }}" method="post">
                                 @csrf
                               
                                 <div class="mb-3">

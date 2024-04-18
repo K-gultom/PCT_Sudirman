@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 
-    <div class="container-fluid mt-2">
+    <div class="container-fluid pt-3 mb-3">
         <h4 class="mb-0">Add Category</h4>
 
         <nav aria-label="breadcrumb">
@@ -38,7 +38,7 @@
                               
                                 <div class="mb-3">
                                     <label for="name">Name</label>
-                                    <input value=" {{old('name',$data->name)}}" type="name" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Type category name ...">
+                                    {{-- <input value=" {{old('name', $data->name)}}" type="name" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Type category name ..."> --}}
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{$message}}

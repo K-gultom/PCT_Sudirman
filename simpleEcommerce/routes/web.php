@@ -49,9 +49,14 @@ Route::middleware(['auth'])->group(function(){
 
     //Category
     Route::get('/category', [categoryController::class, 'index']);
+    
     Route::get('/add/category', [categoryController::class, 'add']);
-    Route::get('/edit/category', [categoryController::class, 'edit']);
-    Route::get('/del/category', [categoryController::class, 'delete']);
+    Route::post('/add/category', [categoryController::class, 'addProses']);
+
+    Route::get('/edit/category/{id}', [categoryController::class, 'edit']);
+    Route::post('/edit/category/{id}', [categoryController::class, 'editProses']);
+
+    Route::get('/del/category/{id}', [categoryController::class, 'delete']);
 
 
 });
