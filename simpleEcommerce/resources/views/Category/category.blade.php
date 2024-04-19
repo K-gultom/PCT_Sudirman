@@ -53,9 +53,10 @@
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$item->name}}</td>
                                 <td>
-                                    <a href="" class="btn btn-warning btn-sm">
+                                    <a href="{{ url('/edit/category') }}/{{ $item->id }}" class="btn btn-warning btn-sm">
                                         <i class="bi bi-pencil"></i> Edit
                                     </a>
+                                    
                                     <a href="{{ url('/del/category') }}/{{ $item->id }}" class="btn btn-danger btn-sm" 
                                         onclick="return confirm('Are You Sure ???');">
                                         <i class="bi bi-trash"></i> Delete

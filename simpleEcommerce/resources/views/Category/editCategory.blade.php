@@ -38,7 +38,7 @@
                               
                                 <div class="mb-3">
                                     <label for="name">Name</label>
-                                    {{-- <input value=" {{old('name', $data->name)}}" type="name" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Type category name ..."> --}}
+                                    <input value="{{$data->name}}" type="name" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Type category name ...">
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{$message}}
@@ -47,10 +47,7 @@
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="bi bi-box-arrow-in-right"></i> Process
-                                </button>
-                                <button type="reset" class="btn btn-light">
-                                    Reset
+                                    <i class="bi bi-box-arrow-in-right"></i> Update
                                 </button>
                             </form>
                         </div>
