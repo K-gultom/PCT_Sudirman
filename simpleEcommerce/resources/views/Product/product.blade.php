@@ -3,7 +3,7 @@
     Product
 @endsection
 @section('content')
-    <div class="container-fluid mt-2 mb-4">
+    <div class="container-fluid pt-3 mb-3">
         <h4 class="mb-0">Product</h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -18,7 +18,7 @@
                         <strong>Data</strong> Product
                     </div>
                     <div class="w-100 text-end">
-                        <a href="" class="btn btn-primary"> 
+                        <a href="{{ url('/add/product') }}" class="btn btn-primary"> 
                             <i class="bi bi-plus-circle"></i> Add New Product
                         </a>
                     </div>

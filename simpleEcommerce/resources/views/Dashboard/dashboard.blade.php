@@ -44,15 +44,15 @@
         <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="bgMe" src="{{ url('images/me.jpg') }}" class="d-block w-100" alt="Banner 1">
+                    <img class="bgMe" src="{{ url('images/bg1.jpg') }}" class="d-block w-100" alt="Banner 1">
                     {{-- https://via.placeholder.com/1200x400 --}}
                 </div>
                 <div class="carousel-item">
-                    <img class="bgMe" src="{{ url('images/me.jpg') }}" class="d-block w-100" alt="Banner 2">
+                    <img class="bgMe" src="{{ url('images/bg2.jpg') }}" class="d-block w-100" alt="Banner 2">
                     {{-- https://via.placeholder.com/1200x400 --}}
                 </div>
                 <div class="carousel-item">
-                    <img class="bgMe" src="{{ url('images/me.jpg') }}" class="d-block w-100" alt="Banner 3">
+                    <img class="bgMe" src="{{ url('images/bg3.jpg') }}" class="d-block w-100" alt="Banner 3">
                     {{-- https://via.placeholder.com/1200x400 --}}
                 </div>
 

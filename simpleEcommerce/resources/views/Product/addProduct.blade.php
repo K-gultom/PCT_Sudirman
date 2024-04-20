@@ -3,7 +3,7 @@
     Add Product
 @endsection
 @section('content')
-    <div class="container-fluid mt-2">
+    <div class="container-fluid pt-3 mb-3">
         <h4>Add Product</h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">

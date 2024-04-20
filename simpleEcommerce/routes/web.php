@@ -4,6 +4,7 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\katalogController;
+use App\Http\Controllers\productController;
 use App\Http\Middleware\NoLogin;
 use Illuminate\Support\Facades\Route;
 
@@ -57,6 +58,15 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/edit/category/{id}', [categoryController::class, 'editProses']);
 
     Route::get('/del/category/{id}', [categoryController::class, 'delete']);
+
+
+    //Product
+    Route::get('/product', [productController::class, 'index']);
+
+    Route::get('/add/product', [productController::class, 'add']);
+    Route::post('/add/product', [productController::class, 'addProses']);
+
+
 
 
 });
