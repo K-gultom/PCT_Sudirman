@@ -38,7 +38,7 @@ Route::middleware([NoLogin::class])->group(function(){
     Route::post('/register', [authController::class, 'register_proses']);
 
 });
-
+ 
 Route::middleware(['auth'])->group(function(){
 
     //logout

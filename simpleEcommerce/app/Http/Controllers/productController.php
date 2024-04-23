@@ -28,9 +28,7 @@ class productController extends Controller
             'price' => 'required|integer',
             'photo' => 'required|mimes:png,jpg,jpeg',
         ]);
-
-        
-        
+                
     }
 
     
