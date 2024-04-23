@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,6 +30,19 @@ class productController extends Controller
             'photo' => 'required|mimes:png,jpg,jpeg',
         ]);
                 
+        $photo = $req -> file('photo');
+        $new_photo_name = uniqid().".".$photo->getClientOriginalExtension();
+        $photo -> move('images', $new_photo_name);
+
+        $new = new Product();
+        $new -> user_id = Auth::user()->id;
+        $new -> category_id  = $req -> category;
+        $new -> name = $req -> name;
+        $new -> price = $req -> price;
+        $new -> photo = $new_photo_name;
+        $new -> save();
+
+        return redirect('/product')->with('message', 'Add Product Success!!!');
     }
 
     
