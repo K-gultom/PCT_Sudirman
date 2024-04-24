@@ -11,7 +11,11 @@ class productController extends Controller
 {
     public function index(){
         
-        return view('Product.product');
+        $iduser = Auth::user()->id;
+        $data = Product::with('category')->where('user_id', $iduser)->get();
+        
+        return view('Product.product', compact('data'));
+
     }
 
     public function add(){
@@ -22,7 +26,6 @@ class productController extends Controller
     }
 
     public function addproses(Request $req){
-
         $req->validate([
             'category' => 'required|exists:categories,id',
             'name' => 'required|min:3|max:50',
@@ -41,8 +44,23 @@ class productController extends Controller
         $new -> price = $req -> price;
         $new -> photo = $new_photo_name;
         $new -> save();
-
         return redirect('/product')->with('message', 'Add Product Success!!!');
+    }
+
+    public function edit($id){
+
+        $iduser = Auth::user()->id;
+        $category = Category::where('user_id', $iduser)->get();
+        $data = Product::findOrFail($id);
+        return view('Product.editProduct', compact('category', 'data'));
+    }
+
+    public function editProses(){
+
+    }
+
+    public function delete(){
+        
     }
 
     

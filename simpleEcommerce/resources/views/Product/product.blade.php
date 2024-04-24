@@ -47,7 +47,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach ($data as $item)
+                        @foreach ($data as $item)
                             <tr>
                                 <td>{{$loop->iteration}} </td>
                                 <td>
@@ -57,16 +57,16 @@
                                 <td>{{$item->category->name}} </td>
                                 <td>{{number_format($item->price)}} </td>
                                 <td>
-                                    <a href="" class="btn btn-warning btn-sm">
+                                    <a href="{{ url('/edit/product') }}/{{ $item->id }}" class="btn btn-warning btn-sm">
                                         <i class="bi bi-pencil"></i> Edit
                                     </a>
-                                    <a href="" class="btn btn-danger btn-sm" 
+                                    <a href="{{ url('/del/product') }}/{{ $item->id }}" class="btn btn-danger btn-sm" 
                                         onclick="return confirm('Are You Sure ???');">
                                         <i class="bi bi-trash"></i> Delete
                                     </a>
                                 </td>
                             </tr>   
-                        @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>
