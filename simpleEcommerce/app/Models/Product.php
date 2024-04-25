@@ -19,5 +19,15 @@ class Product extends Model
     {
         return $this->hasOne(Category::class, 'id', 'category_id');
     }
+
+    /**
+     * Get the seller associated with the Product
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function seller(): HasOne
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
     
 }

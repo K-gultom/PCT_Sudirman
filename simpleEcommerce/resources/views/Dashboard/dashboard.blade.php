@@ -27,11 +27,14 @@
     
     /* Custom styles for the product card */
     .product-card {
-      margin-bottom: 15px;
+        margin-bottom: 15px;
+         width: 220px;
+        height: 395px;
     }
-    .product-card{
-        width: 180px;
-        height: 320px;
+    .product-card .card-img-top{
+        object-fit: cover;
+        width: 100%;
+        height: 220px;
     }
     .bgMe{
         border-radius: 20px;
@@ -90,18 +93,18 @@
 
     <div class="container">
         <div class="row">
-            @for ($i = 0; $i <= 20; $i++)
-                <div class="col-6 col-md-3 col-lg-2">
+            @foreach ($data as $item)
+                <div class="col-6 col-md-3 col-lg-2 m-2">
                     <div class="card product-card">
-                        <img src="{{ url('images/test.png') }}" class="card-img-top img-fluid" alt="Product Image">
+                        <img src="{{ url('images', $item->photo) }}" class="card-img-top img-fluid" alt="Product Image">
                         <div class="card-body">
-                        <h5 class="card-title">Nama Produk</h5>
-                        <p class="card-text">Harga: Rp100.000</p>
-                        <a href="#" class="btn btn-sm btn-primary">Beli Sekarang</a>
+                            <h5 class="card-title">{{ $item->name }}</h5>
+                            <p class="card-text">Harga: Rp{{ number_format($item->price) }}</p>
+                            <a href="#" class="btn btn-sm btn-primary">Beli Sekarang</a>
                         </div>
                     </div>
                 </div>
-            @endfor
+            @endforeach
             <!-- Add more product cards here -->
         </div>
         <div class="row mb-3">
