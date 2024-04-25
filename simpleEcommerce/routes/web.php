@@ -42,30 +42,32 @@ Route::middleware([NoLogin::class])->group(function(){
 Route::middleware(['auth'])->group(function(){
 
     //logout
-    Route::get('/logout', [authController::class, 'logout']);
+        Route::get('/logout', [authController::class, 'logout']);
 
     //katalog
-    Route::get('/katalog', [katalogController::class, 'index']);
-
+        Route::get('/katalog', [katalogController::class, 'index']);
 
     //Category
-    Route::get('/category', [categoryController::class, 'index']);
-    
-    Route::get('/add/category', [categoryController::class, 'add']);
-    Route::post('/add/category', [categoryController::class, 'addProses']);
+        Route::get('/category', [categoryController::class, 'index']);
+        
+        Route::get('/add/category', [categoryController::class, 'add']);
+        Route::post('/add/category', [categoryController::class, 'addProses']);
 
-    Route::get('/edit/category/{id}', [categoryController::class, 'edit']);
-    Route::post('/edit/category/{id}', [categoryController::class, 'editProses']);
+        Route::get('/edit/category/{id}', [categoryController::class, 'edit']);
+        Route::post('/edit/category/{id}', [categoryController::class, 'editProses']);
 
-    Route::get('/del/category/{id}', [categoryController::class, 'delete']);
-
+        Route::get('/del/category/{id}', [categoryController::class, 'delete']);
 
     //Product
-    Route::get('/product', [productController::class, 'index']);
+        Route::get('/product', [productController::class, 'index']);
 
-    Route::get('/add/product', [productController::class, 'add']);
-    Route::post('/add/product', [productController::class, 'addProses']);
+        Route::get('/add/product', [productController::class, 'add']);
+        Route::post('/add/product', [productController::class, 'addProses']);
 
+        Route::get('/edit/product/{id}', [productController::class, 'edit']);
+        Route::post('/edit/product/{id}', [productController::class, 'editProses']);
+        
+        Route::get('/del/product/{id}', [productController::class, 'delete']);
 
 
 

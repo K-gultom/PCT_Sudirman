@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,7 +11,11 @@ class productController extends Controller
 {
     public function index(){
         
-        return view('Product.product');
+        $iduser = Auth::user()->id;
+        $data = Product::with('category')->where('user_id', $iduser)->get();
+        
+        return view('Product.product', compact('data'));
+
     }
 
     public function add(){
@@ -21,7 +26,6 @@ class productController extends Controller
     }
 
     public function addproses(Request $req){
-
         $req->validate([
             'category' => 'required|exists:categories,id',
             'name' => 'required|min:3|max:50',
@@ -29,6 +33,34 @@ class productController extends Controller
             'photo' => 'required|mimes:png,jpg,jpeg',
         ]);
                 
+        $photo = $req -> file('photo');
+        $new_photo_name = uniqid().".".$photo->getClientOriginalExtension();
+        $photo -> move('images', $new_photo_name);
+
+        $new = new Product();
+        $new -> user_id = Auth::user()->id;
+        $new -> category_id  = $req -> category;
+        $new -> name = $req -> name;
+        $new -> price = $req -> price;
+        $new -> photo = $new_photo_name;
+        $new -> save();
+        return redirect('/product')->with('message', 'Add Product Success!!!');
+    }
+
+    public function edit($id){
+
+        $iduser = Auth::user()->id;
+        $category = Category::where('user_id', $iduser)->get();
+        $data = Product::findOrFail($id);
+        return view('Product.editProduct', compact('category', 'data'));
+    }
+
+    public function editProses(){
+
+    }
+
+    public function delete(){
+        
     }
 
     
