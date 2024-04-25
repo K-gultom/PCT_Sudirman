@@ -26,6 +26,21 @@
             </ol>
         </nav>
 
+        <div class="row mb-5">
+            <div class="col-6 offset-3">
+                <div class="mt-3 mb-3">
+                    <form action="{{url('catalog')}}">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="search" placeholder="Search Product ...">
+                            <button class="btn  btn-primary" type="submit">
+                                <i class="bi bi-search"></i> Search
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <div class="row align-items-center">
             @for ($i = 0 ; $i < 10 ; $i++)
                 <div class="col-md-2 col-lg-2">
