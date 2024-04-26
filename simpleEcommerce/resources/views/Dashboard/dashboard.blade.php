@@ -22,6 +22,14 @@
       display: inline-block;
       width: 200px; /* Adjust the width as needed */
       margin-right: 10px; /* Adjust the margin as needed */
+
+    }
+
+    .card-text, .card-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
     }
 
     
@@ -32,6 +40,17 @@
         height: 395px;
     }
     .product-card .card-img-top{
+        object-fit: cover;
+        width: 100%;
+        height: 220px;
+    }
+
+    .product-card-slider{
+        margin-bottom: 15px;
+        width: 220px;
+        height: 305px;
+    }
+    .product-card-slider .img-top{
         object-fit: cover;
         width: 100%;
         height: 220px;
@@ -76,17 +95,17 @@
     {{-- Card Carousel --}}
     <div class="container p-5" >
         <div class="card-slider">
-            @for ($i=1; $i<=10; $i++)
-                <div class="card">
-                    <a href="{{ url('/') }}" class="text-decoration-none">
-                        <img src="{{ url('images/test.png') }}" class="card-img-top" alt="Card Image">
+            @foreach ($data as $item)
+                <div class="card product-card-slider">
+                    <a href="{{ url('/katalog') }}" class="text-decoration-none">
+                        <img src="{{ url('images', $item->photo) }}" class="card-img-top img-top" alt="Card Image">
                     </a>
                     <div class="card-body">
-                        <h5 class="card-title">Card {{ $i }}</h5>
-                        <p class="card-text">This is a sample card.</p>
+                        <h5 class="card-title">{{ $item->name }}</h5>
+                        <p class="card-text">Harga: Rp{{ number_format($item->price) }}</p>
                     </div>
                 </div>
-            @endfor
+            @endforeach
         <!-- Add more cards here -->
         </div>
     </div>

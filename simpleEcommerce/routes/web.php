@@ -24,7 +24,11 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('/', [dashboardController::class, 'index']);
+    Route::get('/', [dashboardController::class, 'index']);
+
+    //katalog
+    Route::get('/katalog', [katalogController::class, 'index']);
+
 
 
 Route::middleware([NoLogin::class])->group(function(){
@@ -44,8 +48,6 @@ Route::middleware(['auth'])->group(function(){
     //logout
         Route::get('/logout', [authController::class, 'logout']);
 
-    //katalog
-        Route::get('/katalog', [katalogController::class, 'index']);
 
     //Category
         Route::get('/category', [categoryController::class, 'index']);
