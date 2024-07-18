@@ -8,10 +8,11 @@ use App\Http\Middleware\NoLogin;
 use Illuminate\Support\Facades\Route;
 
 
+
 Route::get('/', [authController::class, 'index']);
 
 Route::middleware([NoLogin::class])-> group(function(){
-
+    
     Route::post('/', [authController::class, 'store'])->name('login');
 
     Route::get('/register',[registerController::class,'create']);

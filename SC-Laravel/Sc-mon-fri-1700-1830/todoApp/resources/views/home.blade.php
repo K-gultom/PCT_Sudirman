@@ -46,7 +46,7 @@ Home
                             aria-label="Search">
                         <button class="btn btn-outline-primary" type="submit">Search</button>
 
-                        <a href="{{ url('/home') }}" class="mx-1 btn btn-primary btn-md">Refresh</a>
+                        <a href="{{ url('/home') }}" class="mx-1 btn btn-outline-success btn-md">Refresh</a>
                     </form>
 
                     <table class="table">
@@ -57,7 +57,7 @@ Home
                             <th class="text-center">Aksi</th>
                         </thead>
                         <tbody>
-                            @foreach ($data as $item)
+                            {{-- @foreach ($data as $item)
                             <tr>
                                 <td>
                                     {{ (($data->currentPage() - 1) * $data->perPage()) + $loop->iteration }}
@@ -67,31 +67,30 @@ Home
                                 <td class="text-center">
                                     <a
                                         href="{{ url('/todo') }}/{{ $item->id }}"
-                                        class="btn btn-success btn-sm"
+                                        class="btn btn-outline-success btn-sm"
                                         title="Lihat Data">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <a
                                         href="{{ url('/edit/todo') }}/{{ $item->id }}"
-                                        class="btn btn-warning btn-sm"
+                                        class="btn btn-outline-warning btn-sm"
                                         title="Edit">
                                         <i class="bi bi-pencil"></i>
                                     </a>
 
                                     <a
                                         href="{{ url('/todo/del', ['id' => $item->id]) }}"
-                                        class="btn btn-danger btn-sm"
+                                        class="btn btn-outline-danger btn-sm"
                                         title="Hapus"
                                         onclick="return confirm('Hapus Data {{ $item->nama_suplier }} ??');">
                                         <i class="bi bi-trash"></i>
                                     </a>
-
                                 </td>
                             </tr>
-                            @endforeach
+                            @endforeach --}}
                         </tbody>
                     </table>
-                    {{ $data->links() }}
+                    {{-- {{ $data->links() }} --}}
                 </div>
             </div>
         </div>

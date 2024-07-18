@@ -50,10 +50,13 @@
                                 href="{{ url('/home') }}">
                                 Home</a>
                         </li>
+                        
                         <li class="nav-item">
                             <a
                                 class="nav-link {{ Request::is('add/todo') ? 'active' : '' }}"
-                                href="{{ url('/add/todo') }}">Add Todo</a>
+                                href="{{ url('/add/todo') }}">
+                                Add Todo
+                            </a>
                         </li>
 
                         @if (Auth::user())

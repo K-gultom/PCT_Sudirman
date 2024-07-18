@@ -14,14 +14,11 @@ class authController extends Controller
      */
     public function index()
     {
-
         return view('Auth.login');
-        
     }
 
     public function store(Request $req)
     {
-
         $req -> validate([
             "email" => 'required|min:6|max:50|email|exists:users,email',
             "password" => 'required|min:6|max:20',
@@ -37,14 +34,13 @@ class authController extends Controller
         }else{
             return redirect()->back()->withErrors(['password' => 'Password Tidak Sesuai']);
         }
-
     }
 
     public function logout(){
 
         Auth::logout();
-
         return redirect('/');
 
     }
+    
 }

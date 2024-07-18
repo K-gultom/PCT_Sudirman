@@ -10,13 +10,10 @@ class homeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $req)
+    public function index()
     {
-        $search = $req->input('search');
-        
-        $data = todo::where('todo', 'like', "%{$search}%")
-        ->paginate();
-        return view('home', compact('data'));
+        $data = todo::paginate();
+        return view('home');
     }
 
     /**
