@@ -20,7 +20,7 @@ Route::middleware([NoLogin::class])-> group(function(){
 
 });
 
-route::middleware(['auth'])->group(function(){
+Route::middleware(['auth'])->group(function(){
 
     Route::get('/logout', [authController::class, 'logout']);
 
