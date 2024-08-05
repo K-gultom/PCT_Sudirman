@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -11,7 +14,7 @@ class AuthController extends Controller
      */
     public function index()
     {
-        //
+        return view('Auth.login');
     }
 
     /**
@@ -27,15 +30,33 @@ class AuthController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "email" => 'required|max:50|email|exists:users,email',
+            "password" => 'required|min:6',
+        ]);
+
+        $user = User::where('email', $request->email)->first();
+
+        if (Hash::check($request -> password, $user -> password)) {
+
+            Auth::attempt(['email' => $request->email, 'password' => $request->password]);
+            return redirect('/');
+
+        } else {
+            
+            return redirect()->back()
+            ->withErrors([
+                'email' => 'Email is wrong, please check again!',
+                'password' => 'Password is Invalid, please check again!!'
+            ]);
+
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function logout()
     {
-        //
+        Auth::logout();
+        return redirect('/');
     }
 
     /**

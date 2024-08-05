@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Route;
 
 
 
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/etalase', [EtalaseController::class, 'index']);
+
+
 Route::middleware([NoLogin::class])-> group(function(){
 
     Route::controller(AuthController::class)->group(function(){
@@ -25,37 +30,32 @@ Route::middleware([NoLogin::class])-> group(function(){
     
 });
 
+Route::middleware(['auth'])->group(function(){
 
-Route::get('/login', [authController::class, 'index']);
-Route::post('/login', [authController::class, 'store'])->name('login');
-
-    Route::controller(RegisterController::class)->group(function(){
-        Route::get('/register', 'index');
-        Route::post('/register', 'store');
-    });
-
-
-Route::get('/', [HomeController::class, 'index']);
-
-
-Route::get('/etalase', [EtalaseController::class, 'index']);
-
+    Route::get('/logout', [AuthController::class, 'logout']);
 
     Route::controller(KategoriController::class)->group(function(){
         Route::get('/kategori', 'index');   //menampilkan halaman kategori
-        Route::get('/kategori/{id}', 'destroy');    //route untuk menghapus data kategori
+
         Route::get('/kategori/add', 'create');  //untuk menampilkan form simpan data kategori
         Route::post('/kategori/add', 'store');  // untuk proses simpan data kategori
+
         Route::get('/kategori/edit/{id}', 'edit');  //untuk menampilkan form edit data kategori
         Route::post('/kategori/edit/{id}', 'update');   //untuk proses update/edit data kategori
-    });
 
+        Route::get('/kategori/{id}', 'destroy');    //route untuk menghapus data kategori
+    });
 
     Route::controller(BarangController::class)->group(function(){
         Route::get('/barang', 'index');
-        Route::get('/barang/{id}', 'destroy');
+
         Route::get('/barang/add', 'create');
         Route::post('/barang/add', 'store');
+
         Route::get('/barang/edit/{id}', 'edit');
         Route::post('/barang/edit/{id}', 'update');
+        
+        Route::get('/barang/{id}', 'destroy');
     });
+
+});

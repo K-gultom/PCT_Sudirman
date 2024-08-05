@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\produk;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -9,9 +10,14 @@ class HomeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $req)
     {
-        //
+        $data = produk::with('getSeller')->where('name', 'like', "%$req->search%")->get();
+        $data = produk::inRandomOrder()->get();
+
+        // Buat tampilan untuk menampilkan slider di halaman home
+
+        return view('Home.home', compact('data'));
     }
 
     /**

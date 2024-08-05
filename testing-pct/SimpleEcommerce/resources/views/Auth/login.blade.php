@@ -1,4 +1,8 @@
-@extends('main') @section('title') Login @endsection @section('content')
+@extends('main') 
+@section('title') 
+Login
+@endsection 
+@section('content')
 <style>
     .container {
         /* margin-top: 100px; */
@@ -26,7 +30,7 @@
                 </div>
                 <div class="card-body">
 
-                    <form action="{{url('/')}}" method="post">
+                    <form action="{{route('login')}}" method="post">
                         @csrf
 
                         <div class="mb-3">

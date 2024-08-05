@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\produk;
 use Illuminate\Http\Request;
 
 class EtalaseController extends Controller
@@ -9,9 +10,10 @@ class EtalaseController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $r)
     {
-        //
+        $data = produk::with('getSeller')->where('name','like',"%$r->search%")->get();
+        return view('Etalase.etalase', compact('data'));
     }
 
     /**

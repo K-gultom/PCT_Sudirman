@@ -24,14 +24,18 @@
                 /* Adjust to your desired active background color */
                 color: white !important;
                 /* Ensure the text color is visible */
-                border-radius: 8px;
+                border-radius: 10px;
+            }
+            .bi-shop{
+                font-size: 30px;
             }
         </style>
 
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand px-5" style="margin-left: 35px">
-                    <strong>Todo App</strong>
+                    <i class="bi bi-shop"></i>
+                    <strong>GMA E-Commerce</strong>
                 </a>
                 <button
                     class="navbar-toggler"
@@ -46,9 +50,9 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-right: 30px">
                         <li class="nav-item">
                             <a
-                                class="nav-link {{ Request::is('home') ? 'active' : '' }}"
+                                class="nav-link {{ Request::is('/') ? 'active' : '' }}"
                                 aria-current="page"
-                                href="{{ url('/home') }}">
+                                href="{{ url('/') }}">
                                 Beranda</a>
                         </li>
                         <li class="nav-item">
@@ -59,33 +63,32 @@
                                 Etalase</a>
                         </li>
                         
-                        <li class="nav-item">
-                            <a
-                                class="nav-link {{ Request::is('kategori') ? 'active' : '' }}"
-                                href="{{ url('/kategori') }}">
-                                Kategori
-                            </a>
-                        </li>
+                        @if (Auth::user())
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link {{ Request::is('kategori') ? 'active' : '' }}"
+                                    href="{{ url('/kategori') }}">
+                                    Kategori
+                                </a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a
-                                class="nav-link {{ Request::is('barang') ? 'active' : '' }}"
-                                href="{{ url('/barang') }}">
-                                Barang
-                            </a>
-                        </li>
-
-                        {{-- @if (Auth::user()) --}}
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link {{ Request::is('barang') ? 'active' : '' }}"
+                                    href="{{ url('/barang') }}">
+                                    Barang
+                                </a>
+                            </li>
                             <li class="nav-item">
                                 <a
                                     class="nav-link {{ Request::is('logout') ? 'active' : '' }}"
                                     href="{{ url('/logout') }}">Logout</a>
                             </li>
-                        {{-- @else --}}
+                        @else
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="{{ url('/') }}">Login</a>
+                                <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="{{ url('/login') }}">Login</a>
                             </li>
-                        {{-- @endif --}}
+                        @endif
                     </ul>
                 </div>
             </div>
