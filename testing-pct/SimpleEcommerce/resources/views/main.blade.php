@@ -35,7 +35,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand px-5" style="margin-left: 35px">
                     <i class="bi bi-shop"></i>
-                    <strong>GMA E-Commerce</strong>
+                    <strong>PCT E-Commerce</strong>
                 </a>
                 <button
                     class="navbar-toggler"
