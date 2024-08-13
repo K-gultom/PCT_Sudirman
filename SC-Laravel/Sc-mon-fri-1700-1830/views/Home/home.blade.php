@@ -79,7 +79,7 @@
 
     <div class="container-fluid mt-4">
         <div class="row my-3">
-            @foreach ($data as $item)
+            {{-- @foreach ($data as $item)
                 <div class="col-6 col-md-3 col-lg-2 m-2">
                     <div class="card product-card">
                         <div class="container text-center">
@@ -95,7 +95,7 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            @endforeach --}}
             <!-- Add more product cards here -->
         </div>
         <div class="row mb-3">

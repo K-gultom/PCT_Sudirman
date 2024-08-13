@@ -53,26 +53,7 @@
         </div>
 
         <div class="row align-items-center">
-           @foreach ($data as $item)
-            <div class="col-md-2 col-lg-2">
-                <div class="card product-card">
-                    <div class="container text-center">
-                        <img src="{{ url('assets/produkImages', $item->photo) }}" class="card-img-top img-fluid" alt="Product Image">
-                    </div>
-                    <div class="card-body">
-                    <h5 class="card-title">{{ $item->name }}</h5>
-                    <p class="card-text"><b>Harga:</b> Rp {{ number_format($item->price) }}</p>
-                    <div class="text-secondary">
-                        Seller: {{ $item->getSeller->name }}
-                    </div>
-                    <a href="https://api.whatsapp.com/send?phone=+6282179480009&text={{urlencode("Halo saya mau pesan $item->name")}}" target="_blank"
-                        class="btn btn-sm btn-success">
-                        <i class="bi bi-whatsapp"></i> Beli Sekarang
-                    </a>
-                    </div>
-                </div>
-            </div>
-           @endforeach
+          
         </div>
     </div>
     

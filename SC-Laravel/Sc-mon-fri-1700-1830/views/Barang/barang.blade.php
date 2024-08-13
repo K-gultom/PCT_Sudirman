@@ -48,7 +48,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($data as $item)
+                        {{-- @foreach ($data as $item)
                             <tr>
                                 <td>
                                     {{ (($data->currentPage() - 1) * $data->perPage()) + $loop->iteration }}
@@ -69,10 +69,10 @@
                                     </a>
                                 </td>
                             </tr>   
-                        @endforeach
+                        @endforeach --}}
                     </tbody>
                 </table>
-                {{ $data->links() }}
+                {{-- {{ $data->links() }} --}}
             </div>
         </div>      
     </div>

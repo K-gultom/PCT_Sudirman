@@ -37,7 +37,7 @@
                               
                                 <div class="mb-3">
                                     <label for="name">Name</label>
-                                    <input value=" {{old('name', $data->name)}}" type="name" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Type category name ..." autocomplete="off">
+                                    <input value=" {{old('name')}}" type="name" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Type category name ..." autocomplete="off">
                                     @error('name')
                                         <div class="invalid-feedback">
                                             {{$message}}
