@@ -13,7 +13,7 @@ Home
         </ol>
     </nav>
 
-    <div class="row text-center">
+    <div class="row">
         <div class="col-8 offset-2">
             <div class="card">
                 <div class="card-header">
@@ -53,17 +53,17 @@ Home
                         <thead>
                             <th>No</th>
                             <th>Todo</th>
-                            <th>Date</th>
+                            <th class="text-center">Date</th>
                             <th class="text-center">Aksi</th>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($data as $item)
+                            @foreach ($data as $item)
                             <tr>
                                 <td>
                                     {{ (($data->currentPage() - 1) * $data->perPage()) + $loop->iteration }}
                                 </td>
                                 <td>{{ $item->todo }}</td>
-                                <td>{{ Carbon\Carbon::parse( $item->date )->format('d/m/Y') }}</td>
+                                <td class="text-center">{{ Carbon\Carbon::parse( $item->date )->format('d/m/Y') }}</td>
                                 <td class="text-center">
                                     <a
                                         href="{{ url('/todo') }}/{{ $item->id }}"
@@ -87,10 +87,10 @@ Home
                                     </a>
                                 </td>
                             </tr>
-                            @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
-                    {{-- {{ $data->links() }} --}}
+                    {{ $data->links() }}
                 </div>
             </div>
         </div>

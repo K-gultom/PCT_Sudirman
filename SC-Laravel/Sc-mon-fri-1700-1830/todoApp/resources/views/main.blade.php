@@ -10,7 +10,7 @@
             integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
             crossorigin="anonymous">
 
-        {{-- Link CDN --}}
+        {{-- Link CDN ICON--}}
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -42,24 +42,35 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-right: 30px">
-                        <li class="nav-item">
-                            <a
-                                class="nav-link {{ Request::is('home') ? 'active' : '' }}"
-                                aria-current="page"
-                                href="{{ url('/home') }}">
-                                Home</a>
-                        </li>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-right: 10px">
                         
-                        <li class="nav-item">
-                            <a
-                                class="nav-link {{ Request::is('add/todo') ? 'active' : '' }}"
-                                href="{{ url('/add/todo') }}">
-                                Add Todo
-                            </a>
-                        </li>
-
                         @if (Auth::user())
+                            <li class="nav-item mx-3">
+                                <style>
+                                    .avatar{
+                                        font-size: 30px;
+                                    }
+                                </style>
+                                <a title="Haii {{ Auth::user()->name }}">
+                                    <i class="bi bi-person-circle avatar text-dark"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link {{ Request::is('home') ? 'active' : '' }}"
+                                    aria-current="page"
+                                    href="{{ url('/home') }}">
+                                    Home</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a
+                                    class="nav-link {{ Request::is('add/todo') ? 'active' : '' }}"
+                                    href="{{ url('/add/todo') }}">
+                                    Add Todo
+                                </a>
+                            </li>
+
                             <li class="nav-item">
                                 <a
                                     class="nav-link {{ Request::is('logout') ? 'active' : '' }}"
@@ -74,6 +85,19 @@
                 </div>
             </div>
         </nav>
+
+        {{-- <div class="row mt-2 bg-danger">
+            <div class="col d-flex justify-content-end mx-3">
+                <h4 class="
+                    bg-primary 
+                    rounded
+                    p-2
+                    text-end
+                    text-light">
+                    Haii {{ Auth::user()->name }}
+                </h4> 
+            </div>
+        </div> --}}
 
         <div class="container-fluid">
             @yield('content')

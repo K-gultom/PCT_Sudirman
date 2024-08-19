@@ -3,17 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\todo;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class homeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $r)
     {
-        $data = todo::paginate();
-        return view('home');
+        $search = $r->input('search');
+
+        $getId = Auth::user()->id;
+        $data = todo::where('user_id', $getId)
+        ->where('todo', 'like', "%{$search}%")
+        ->paginate(4);
+        return view('home', compact('data'));
     }
 
     /**

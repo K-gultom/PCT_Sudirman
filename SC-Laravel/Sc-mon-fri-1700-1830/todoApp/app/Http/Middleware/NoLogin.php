@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class NoLogin
 {
+    
     /**
      * Handle an incoming request.
      *
@@ -21,4 +22,5 @@ class NoLogin
         };
         return $next($request);
     }
+
 }
