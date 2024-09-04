@@ -27,7 +27,7 @@ Route::middleware([NoLogin::class])-> group(function(){
         Route::get('/register', 'index');
         Route::post('/register', 'store');
     });
-    
+
 });
 
 Route::middleware(['auth'])->group(function(){

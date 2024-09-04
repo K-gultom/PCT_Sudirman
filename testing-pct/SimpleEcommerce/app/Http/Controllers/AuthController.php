@@ -49,7 +49,6 @@ class AuthController extends Controller
                 'email' => 'Email is wrong, please check again!',
                 'password' => 'Password is Invalid, please check again!!'
             ]);
-
         }
     }
 
