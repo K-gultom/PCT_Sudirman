@@ -8,9 +8,9 @@ class firstController extends Controller
 {
     public function index(){
         
-        $nilaiHarian = null;
-        $nilaiUTS = null;
-        $nilaiRata = null;
+        $nilaiHarian = null;    
+        $nilaiUTS = null;    
+        $nilaiRata = null;    
         $hasilNilai = null;
         return view('welcome',
          compact(
