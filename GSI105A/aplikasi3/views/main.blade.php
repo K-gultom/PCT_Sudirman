@@ -144,7 +144,7 @@
         </div> 
 
         <footer class="text-center p-3">
-            &copy; 2024 GMA104A - Apps Stok Barang All rights reserved.
+            &copy; 2024 GSI105A - Apps Stok Barang All rights reserved.
         </footer>
     </div>
 </div>
