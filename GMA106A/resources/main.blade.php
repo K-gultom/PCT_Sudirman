@@ -63,7 +63,7 @@
                                 Etalase</a>
                         </li>
                         
-                        @if (Auth::user())
+                        {{-- @if (Auth::user()) --}}
                             <li class="nav-item">
                                 <a
                                     class="nav-link {{ Request::is('kategori') ? 'active' : '' }}"
@@ -84,11 +84,11 @@
                                     class="nav-link {{ Request::is('logout') ? 'active' : '' }}"
                                     href="{{ url('/logout') }}">Logout</a>
                             </li>
-                        @else
+                        {{-- @else --}}
                             <li class="nav-item">
                                 <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="{{ url('/login') }}">Login</a>
                             </li>
-                        @endif
+                        {{-- @endif --}}
                     </ul>
                 </div>
             </div>
