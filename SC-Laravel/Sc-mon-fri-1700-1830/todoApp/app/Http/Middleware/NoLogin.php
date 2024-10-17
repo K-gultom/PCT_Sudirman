@@ -22,5 +22,5 @@ class NoLogin
         };
         return $next($request);
     }
-
+ 
 }
