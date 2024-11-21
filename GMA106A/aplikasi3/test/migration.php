@@ -1,0 +1,13 @@
+$table->string('kode_transaksi');
+$table->date('tgl_faktur');
+$table->date('tgl_jatuh_tempo');
+$table->string('pelanggan_id');
+$table->enum('jenis_pembayaran', ['Tunai', 'Kredit']);
+$table->string('barang_id');
+$table->bigInteger('jumlah_beli');
+$table->bigInteger('harga_jual');
+$table->bigInteger('diskon');
+$table->bigInteger('sub_total');
+$table->string('user_id');
+$table->date('tgl_buat');
+$table->string('cabang');
