@@ -11,18 +11,18 @@ Register
         </div>
         <div class="card-body">
             @if (Session::has('message'))
-            <div class="alert alert-success" id="flash-message">
-                {{Session::get('message')}}
-            </div>
-            
-            <script>
-                setTimeout(function () {
-                    document
-                        .getElementById('flash-message')
-                        .style
-                        .display = 'none';
-                }, {{ session('timeout', 5000) }});
-            </script>
+                <div class="alert alert-success" id="flash-message">
+                    {{Session::get('message')}}
+                </div>
+                
+                <script>
+                    setTimeout(function () {
+                        document
+                            .getElementById('flash-message')
+                            .style
+                            .display = 'none';
+                    }, {{ session('timeout', 5000) }});
+                </script>
             @endif
 
             <form action="{{url('/register')}}" method="post">
