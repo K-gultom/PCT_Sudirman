@@ -54,7 +54,9 @@
                                     {{ (($data->currentPage() - 1) * $data->perPage()) + $loop->iteration }}
                                 </td>
                                 <td class="text-center">
-                                    <a href="{{url('assets/produkImages')}}/{{$item->photo}}" target="_blank"><img src="{{url('assets/produkImages')}}/{{$item->photo}}" class="img-fluid"></a>
+                                    <a href="{{url('assets/produkImages')}}/{{$item->photo}}" target="_blank">
+                                        <img src="{{url('assets/produkImages')}}/{{$item->photo}}" class="img-fluid">
+                                    </a>
                                 </td>
                                 <td>{{$item->name}} </td>
                                 <td>{{$item->getKategori->name}} </td>
