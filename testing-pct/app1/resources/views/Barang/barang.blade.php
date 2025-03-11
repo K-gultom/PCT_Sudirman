@@ -56,7 +56,7 @@
                                 <td class="text-center">
                                     <a href="{{url('assets/produkImages')}}/{{$item->photo}}" target="_blank">
                                         <img src="{{url('assets/produkImages')}}/{{$item->photo}}" class="img-fluid">
-                                    </a>
+                                    </a> 
                                 </td>
                                 <td>{{$item->name}} </td>
                                 <td>{{$item->getKategori->name}} </td>

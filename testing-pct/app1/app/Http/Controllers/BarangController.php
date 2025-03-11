@@ -14,7 +14,7 @@ class BarangController extends Controller
      */
     public function index()
     {
-
+  
         $idUser = Auth::user()->id;
         $data = produk::with('getKategori')->where('user_id', $idUser)->paginate(10);
         return view('Barang.barang', compact('data'));
